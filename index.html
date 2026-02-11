@@ -23,14 +23,14 @@
 
         .monitor {
             position: relative;
-            width: 900px;
-            height: 650px;
+            width: 950px;
+            height: 700px;
             background: #000;
-            border: 20px solid #333;
-            border-radius: 15px;
+            border: 25px solid #333;
+            border-radius: 20px;
             box-shadow: 
-                0 0 50px rgba(0, 255, 0, 0.3),
-                inset 0 0 30px rgba(0, 50, 0, 0.8);
+                0 0 60px rgba(0, 255, 0, 0.4),
+                inset 0 0 40px rgba(0, 50, 0, 0.9);
             overflow: hidden;
         }
 
@@ -39,6 +39,8 @@
             height: 100%;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Efecto scanlines */
@@ -81,9 +83,9 @@
         .bios-container {
             position: relative;
             width: 100%;
-            height: 100%;
+            height: calc(100% - 100px);
             color: #0f0;
-            padding: 20px;
+            padding: 25px;
             overflow-y: auto;
             z-index: 5;
         }
@@ -113,27 +115,28 @@
         }
 
         .post-logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px #0f0;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            text-shadow: 0 0 15px #0f0;
         }
 
         .post-text {
-            font-size: 14px;
-            margin: 8px 0;
+            font-size: 16px;
+            margin: 10px 0;
             white-space: nowrap;
         }
 
         .loading-bar {
-            width: 400px;
-            height: 20px;
+            width: 450px;
+            height: 25px;
             background: #111;
-            margin: 20px 0;
-            border: 2px solid #0f0;
+            margin: 25px 0;
+            border: 3px solid #0f0;
             position: relative;
             overflow: hidden;
+            border-radius: 3px;
         }
 
         .loading-progress {
@@ -153,12 +156,12 @@
 
         .cursor {
             display: inline-block;
-            width: 10px;
-            height: 16px;
+            width: 12px;
+            height: 18px;
             background: #0f0;
             animation: blink 1s infinite;
             vertical-align: middle;
-            margin-left: 5px;
+            margin-left: 8px;
         }
 
         @keyframes blink {
@@ -168,55 +171,62 @@
         /* Menú principal BIOS */
         .bios-header {
             text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #0f0;
-            padding-bottom: 10px;
+            margin-bottom: 35px;
+            border-bottom: 3px solid #0f0;
+            padding-bottom: 15px;
         }
 
         .bios-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
         }
 
         .bios-version {
-            font-size: 14px;
+            font-size: 16px;
             color: #0c0;
-            margin-top: 5px;
+            margin-top: 8px;
+            font-weight: bold;
         }
 
         .bios-subtitle {
-            font-size: 12px;
+            font-size: 13px;
             color: #0a0;
-            margin-top: 3px;
+            margin-top: 5px;
         }
 
         .menu-tabs {
             display: flex;
-            gap: 30px;
-            margin-bottom: 20px;
-            padding: 10px 0;
-            border-bottom: 1px solid #080;
+            gap: 40px;
+            margin-bottom: 25px;
+            padding: 12px 0;
+            border-bottom: 2px solid #080;
+            justify-content: center;
         }
 
         .menu-tab {
-            padding: 8px 20px;
+            padding: 10px 25px;
             cursor: pointer;
             position: relative;
             font-weight: bold;
+            font-size: 15px;
             transition: all 0.2s;
+            border-radius: 5px;
         }
 
         .menu-tab:hover {
             color: #0ff;
-            text-shadow: 0 0 5px #0ff;
+            text-shadow: 0 0 8px #0ff;
+            background: rgba(0, 50, 50, 0.3);
         }
 
         .menu-tab.active {
             color: #fff;
-            background: rgba(0, 255, 0, 0.2);
-            border-left: 3px solid #0f0;
+            background: rgba(0, 255, 0, 0.25);
+            border-left: 4px solid #0f0;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
         }
 
         .menu-tab::after {
@@ -225,7 +235,7 @@
             bottom: -2px;
             left: 0;
             width: 0;
-            height: 2px;
+            height: 3px;
             background: #0f0;
             transition: width 0.3s;
         }
@@ -256,63 +266,74 @@
         }
 
         .section-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #0ff;
-            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+            padding-bottom: 8px;
+            border-bottom: 2px solid #080;
         }
 
         .setting-group {
-            margin-bottom: 25px;
-        }
-
-        .group-title {
-            font-size: 14px;
-            color: #0c0;
-            margin-bottom: 10px;
-            padding-left: 10px;
+            margin-bottom: 30px;
+            background: rgba(0, 20, 0, 0.2);
+            padding: 15px;
+            border-radius: 5px;
             border-left: 3px solid #080;
         }
 
+        .group-title {
+            font-size: 15px;
+            color: #0c0;
+            margin-bottom: 12px;
+            padding-left: 12px;
+            border-left: 4px solid #0a0;
+            font-weight: bold;
+        }
+
         .setting-item {
-            padding: 8px 15px;
-            margin: 5px 0;
+            padding: 10px 18px;
+            margin: 6px 0;
             cursor: pointer;
             position: relative;
             transition: all 0.2s;
-            border-radius: 3px;
+            border-radius: 4px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            min-height: 35px;
         }
 
         .setting-item:hover {
-            background: rgba(0, 50, 0, 0.5);
+            background: rgba(0, 50, 0, 0.6);
         }
 
         .setting-item.selected {
-            background: rgba(0, 255, 0, 0.2);
-            border-left: 4px solid #0f0;
+            background: rgba(0, 255, 0, 0.25);
+            border-left: 5px solid #0f0;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
         }
 
         .setting-item.editable:hover {
-            background: rgba(0, 80, 80, 0.3);
+            background: rgba(0, 80, 80, 0.4);
         }
 
         .setting-label {
             display: inline-block;
-            width: 350px;
+            width: 400px;
             font-weight: bold;
+            font-size: 14px;
         }
 
         .setting-value {
             color: #0af;
             font-weight: bold;
-            min-width: 120px;
+            min-width: 130px;
             text-align: right;
             position: relative;
-            padding-right: 20px;
+            padding-right: 25px;
+            font-size: 14px;
         }
 
         .setting-value::after {
@@ -320,7 +341,7 @@
             position: absolute;
             right: 0;
             color: #080;
-            font-size: 10px;
+            font-size: 11px;
         }
 
         .setting-item:not(.editable) .setting-value::after {
@@ -330,9 +351,10 @@
         .setting-desc {
             font-size: 11px;
             color: #080;
-            margin-top: 3px;
-            padding-left: 20px;
+            margin-top: 4px;
+            padding-left: 22px;
             width: 100%;
+            line-height: 1.4;
         }
 
         /* Boot order con drag & drop */
@@ -341,76 +363,83 @@
         }
 
         .boot-item {
-            padding: 10px 15px;
-            margin: 5px 0;
-            background: rgba(0, 30, 0, 0.5);
-            border-left: 3px solid #080;
+            padding: 12px 18px;
+            margin: 6px 0;
+            background: rgba(0, 30, 0, 0.6);
+            border-left: 4px solid #080;
             position: relative;
             cursor: grab;
             display: flex;
             align-items: center;
             transition: all 0.2s;
+            border-radius: 3px;
         }
 
         .boot-item.dragging {
             opacity: 0.7;
             transform: scale(1.02);
-            background: rgba(0, 100, 100, 0.3);
+            background: rgba(0, 100, 100, 0.4);
             cursor: grabbing;
         }
 
         .boot-item.over {
             border-left-color: #0f0;
-            background: rgba(0, 50, 0, 0.7);
+            background: rgba(0, 60, 0, 0.8);
+            transform: translateX(5px);
         }
 
         .boot-order-num {
             position: absolute;
-            left: 8px;
+            left: 10px;
             color: #0f0;
             font-weight: bold;
-            font-size: 16px;
-            min-width: 25px;
+            font-size: 17px;
+            min-width: 30px;
             text-align: center;
         }
 
         .boot-device {
-            margin-left: 40px;
+            margin-left: 45px;
             font-weight: bold;
             flex-grow: 1;
+            font-size: 14px;
         }
 
         .boot-type {
             color: #0af;
             font-size: 12px;
-            min-width: 100px;
+            min-width: 110px;
             text-align: right;
         }
 
         .boot-controls {
             display: flex;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 12px;
+            margin-top: 15px;
+            justify-content: center;
         }
 
         .boot-btn {
-            padding: 5px 15px;
-            background: rgba(0, 50, 0, 0.8);
-            border: 1px solid #0f0;
+            padding: 8px 20px;
+            background: rgba(0, 40, 0, 0.9);
+            border: 2px solid #0f0;
             color: #0f0;
             cursor: pointer;
             font-family: 'Courier New', monospace;
-            font-size: 12px;
+            font-size: 13px;
             transition: all 0.2s;
+            border-radius: 4px;
+            font-weight: bold;
         }
 
         .boot-btn:hover {
-            background: rgba(0, 100, 0, 0.9);
-            box-shadow: 0 0 10px #0f0;
+            background: rgba(0, 100, 0, 1);
+            box-shadow: 0 0 12px #0f0;
         }
 
         .boot-btn:active {
             background: rgba(0, 150, 0, 1);
+            transform: scale(0.98);
         }
 
         /* Modal de edición */
@@ -420,7 +449,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -437,11 +466,11 @@
 
         .modal {
             background: #0a0a0a;
-            border: 3px solid #0f0;
-            border-radius: 10px;
-            padding: 30px;
-            width: 500px;
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+            border: 4px solid #0f0;
+            border-radius: 12px;
+            padding: 35px;
+            width: 550px;
+            box-shadow: 0 0 40px rgba(0, 255, 0, 0.6);
             position: relative;
             transform: translateY(-20px);
             opacity: 0;
@@ -454,101 +483,107 @@
         }
 
         .modal-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             color: #0ff;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
-            border-bottom: 2px solid #080;
-            padding-bottom: 10px;
+            border-bottom: 3px solid #080;
+            padding-bottom: 12px;
+            letter-spacing: 1px;
         }
 
         .modal-content {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .modal-label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: bold;
             color: #0f0;
+            font-size: 15px;
         }
 
         .modal-input {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background: #000;
-            border: 2px solid #080;
+            border: 3px solid #080;
             color: #0f0;
             font-family: 'Courier New', monospace;
-            font-size: 14px;
-            margin-bottom: 15px;
+            font-size: 15px;
+            margin-bottom: 18px;
+            border-radius: 4px;
         }
 
         .modal-input:focus {
             outline: none;
             border-color: #0f0;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
         }
 
         .modal-select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background: #000;
-            border: 2px solid #080;
+            border: 3px solid #080;
             color: #0f0;
             font-family: 'Courier New', monospace;
-            font-size: 14px;
-            margin-bottom: 15px;
+            font-size: 15px;
+            margin-bottom: 18px;
             cursor: pointer;
+            border-radius: 4px;
         }
 
         .modal-select option {
             background: #0a0a0a;
             color: #0f0;
+            padding: 8px;
         }
 
         .modal-buttons {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            gap: 25px;
         }
 
         .modal-btn {
             flex: 1;
-            padding: 12px;
-            border: 2px solid #0f0;
+            padding: 14px;
+            border: 3px solid #0f0;
             background: #0a0a0a;
             color: #0f0;
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 15px;
             cursor: pointer;
             transition: all 0.2s;
+            border-radius: 5px;
         }
 
         .modal-btn:hover {
-            background: rgba(0, 255, 0, 0.1);
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            background: rgba(0, 255, 0, 0.15);
+            box-shadow: 0 0 18px rgba(0, 255, 0, 0.6);
         }
 
         .modal-btn.save {
-            background: rgba(0, 50, 0, 0.8);
-            border-color: #0a0;
+            background: rgba(0, 60, 0, 0.9);
+            border-color: #0c0;
         }
 
         .modal-btn.save:hover {
-            background: rgba(0, 100, 0, 0.9);
+            background: rgba(0, 120, 0, 1);
         }
 
         .modal-btn.cancel {
-            background: rgba(50, 0, 0, 0.8);
-            border-color: #a00;
-            color: #f88;
+            background: rgba(60, 0, 0, 0.9);
+            border-color: #c00;
+            color: #f99;
         }
 
         .modal-btn.cancel:hover {
-            background: rgba(100, 0, 0, 0.9);
+            background: rgba(120, 0, 0, 1);
         }
 
         .password-mask {
@@ -557,65 +592,142 @@
 
         .password-toggle {
             position: absolute;
-            right: 10px;
-            top: 45px;
-            background: rgba(0, 30, 0, 0.8);
-            border: 1px solid #080;
+            right: 20px;
+            top: 55px;
+            background: rgba(0, 40, 0, 0.9);
+            border: 2px solid #080;
             color: #0af;
-            padding: 5px 10px;
+            padding: 6px 12px;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 13px;
             font-family: 'Courier New', monospace;
+            border-radius: 3px;
+            transition: all 0.2s;
         }
 
         .password-toggle:hover {
-            background: rgba(0, 50, 50, 0.8);
+            background: rgba(0, 80, 80, 0.9);
+            border-color: #0af;
         }
 
-        /* Botones de navegación */
-        .nav-hint {
+        /* Barra de estado inferior */
+        .status-bar {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 20, 0, 0.8);
-            padding: 15px;
-            border: 1px solid #080;
-            border-radius: 5px;
-            font-size: 12px;
-            line-height: 1.6;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 25, 0, 0.95);
+            border-top: 3px solid #0a0;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            z-index: 15;
         }
 
-        .nav-hint span {
-            color: #0ff;
+        .status-left {
+            display: flex;
+            gap: 30px;
+            color: #0c0;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-label {
+            color: #080;
             font-weight: bold;
         }
 
-        .nav-hint div {
-            margin: 3px 0;
+        .status-value {
+            color: #0af;
+            font-weight: bold;
         }
 
+        .status-changes {
+            color: #ff0;
+            font-weight: bold;
+            animation: pulse-changes 2s infinite;
+        }
+
+        @keyframes pulse-changes {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .status-center {
+            color: #0a0;
+            font-style: italic;
+        }
+
+        .status-right {
+            display: flex;
+            gap: 25px;
+            color: #080;
+        }
+
+        .key-hint {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .key {
+            background: rgba(0, 40, 0, 0.8);
+            border: 1px solid #0a0;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: #0ff;
+            font-size: 12px;
+        }
+
+        .key-desc {
+            font-size: 12px;
+            color: #0c0;
+        }
+
+        /* Indicador de guardado */
         .save-indicator {
-            position: absolute;
+            position: fixed;
             top: 20px;
             right: 20px;
-            background: rgba(0, 30, 0, 0.9);
-            padding: 10px 20px;
-            border: 2px solid #0a0;
-            border-radius: 5px;
-            font-size: 12px;
+            background: rgba(0, 40, 0, 0.95);
+            padding: 12px 25px;
+            border: 3px solid #0c0;
+            border-radius: 8px;
+            font-size: 14px;
             color: #0f0;
             opacity: 0;
-            transition: opacity 0.3s;
+            transform: translateX(200px);
+            transition: all 0.4s ease-out;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            z-index: 99;
         }
 
         .save-indicator.show {
             opacity: 1;
-            animation: pulse 2s infinite;
+            transform: translateX(0);
+            animation: pulse-save 2s infinite;
         }
 
-        @keyframes pulse {
+        @keyframes pulse-save {
             0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4); }
-            50% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+            50% { box-shadow: 0 0 0 12px rgba(0, 255, 0, 0); }
+        }
+
+        .save-indicator.success {
+            border-color: #0f0;
+            color: #0f0;
+        }
+
+        .save-indicator.error {
+            border-color: #f00;
+            color: #f88;
         }
 
         /* Efecto de parpadeo en errores */
@@ -630,8 +742,8 @@
         /* Audio beep (simulado con CSS) */
         .beep-effect {
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             background: radial-gradient(circle, rgba(0,255,0,0.8) 0%, transparent 70%);
             border-radius: 50%;
             opacity: 0;
@@ -641,44 +753,74 @@
 
         /* Scroll personalizado */
         .bios-container::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         .bios-container::-webkit-scrollbar-track {
             background: #0a0a0a;
+            border-radius: 5px;
         }
 
         .bios-container::-webkit-scrollbar-thumb {
             background: #080;
-            border-radius: 4px;
+            border-radius: 5px;
+            border: 2px solid #000;
         }
 
         .bios-container::-webkit-scrollbar-thumb:hover {
             background: #0f0;
         }
 
-        /* Status bar */
-        .status-bar {
+        /* Panel lateral de ayuda */
+        .help-panel {
             position: absolute;
-            bottom: 60px;
-            left: 20px;
             right: 20px;
-            background: rgba(0, 20, 0, 0.9);
-            padding: 8px 15px;
-            border-top: 2px solid #080;
-            font-size: 12px;
-            color: #0c0;
-            display: flex;
-            justify-content: space-between;
+            top: 100px;
+            width: 220px;
+            background: rgba(0, 20, 0, 0.85);
+            border: 2px solid #080;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 11px;
+            z-index: 12;
+            box-shadow: 0 0 15px rgba(0, 50, 0, 0.5);
         }
 
-        .status-changes {
-            color: #0af;
+        .help-title {
+            font-size: 13px;
             font-weight: bold;
+            color: #0ff;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #080;
+            padding-bottom: 5px;
         }
 
-        .status-info {
-            color: #080;
+        .help-item {
+            margin: 6px 0;
+            padding-left: 15px;
+            border-left: 2px solid #080;
+        }
+
+        .help-key {
+            color: #0ff;
+            font-weight: bold;
+            display: inline-block;
+            width: 50px;
+        }
+
+        .help-desc {
+            color: #0a0;
+            font-size: 10px;
+        }
+
+        /* Animaciones adicionales */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section.active {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
@@ -687,7 +829,7 @@
         <div class="screen">
             <!-- Pantalla POST -->
             <div class="post-screen" id="postScreen">
-                <div class="post-logo">AWARD BIOS</div>
+                <div class="post-logo">AWARD BIOS SETUP UTILITY</div>
                 <div class="post-text">CPU: Intel Core i7-12700K @ 3.60GHz</div>
                 <div class="post-text">Memory Testing: 32768K OK</div>
                 <div class="post-text">Detecting NVMe SSD: Samsung 980 PRO 1TB</div>
@@ -717,7 +859,7 @@
 
                 <!-- Sección Main -->
                 <div class="section active" id="main">
-                    <div class="section-title">MAIN</div>
+                    <div class="section-title">MAIN SYSTEM CONFIGURATION</div>
                     
                     <div class="setting-group">
                         <div class="group-title">System Overview</div>
@@ -733,29 +875,37 @@
                             <span class="setting-label">BIOS Version</span>
                             <span class="setting-value">6.00PG</span>
                         </div>
+                        <div class="setting-item">
+                            <span class="setting-label">System Temperature</span>
+                            <span class="setting-value">42°C</span>
+                        </div>
                     </div>
 
                     <div class="setting-group">
                         <div class="group-title">Storage Configuration</div>
                         <div class="setting-item editable" data-setting="sataMode" data-type="select" data-options='["IDE","AHCI","RAID"]'>
-                            <span class="setting-label">SATA Mode</span>
+                            <span class="setting-label">SATA Operation Mode</span>
                             <span class="setting-value">AHCI</span>
-                            <div class="setting-desc">Configure SATA controller mode</div>
+                            <div class="setting-desc">Configure SATA controller operating mode</div>
                         </div>
                         <div class="setting-item editable" data-setting="nvmeDetection" data-type="select" data-options='["Enabled","Disabled"]'>
-                            <span class="setting-label">NVMe Detection</span>
+                            <span class="setting-label">NVMe Controller Detection</span>
                             <span class="setting-value">Enabled</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-label">Hard Disk</span>
+                            <span class="setting-label">Primary Hard Disk</span>
                             <span class="setting-value">Samsung 980 PRO 1TB</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Secondary Storage</span>
+                            <span class="setting-value">WD Blue 2TB SATA</span>
                         </div>
                     </div>
 
                     <div class="setting-group">
                         <div class="group-title">Memory Information</div>
                         <div class="setting-item">
-                            <span class="setting-label">Total Memory</span>
+                            <span class="setting-label">Total Installed Memory</span>
                             <span class="setting-value">32GB DDR5</span>
                         </div>
                         <div class="setting-item editable" data-setting="memoryFreq" data-type="select" data-options='["4800 MHz","5200 MHz","5600 MHz","6000 MHz"]'>
@@ -763,7 +913,11 @@
                             <span class="setting-value">5600 MHz</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-label">Memory Test</span>
+                            <span class="setting-label">Memory Health Status</span>
+                            <span class="setting-value">Optimal</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Memory Test Result</span>
                             <span class="setting-value">Passed</span>
                         </div>
                     </div>
@@ -771,90 +925,107 @@
 
                 <!-- Sección Advanced -->
                 <div class="section" id="advanced">
-                    <div class="section-title">ADVANCED</div>
+                    <div class="section-title">ADVANCED HARDWARE CONFIGURATION</div>
                     
                     <div class="setting-group">
                         <div class="group-title">CPU Configuration</div>
                         <div class="setting-item">
-                            <span class="setting-label">CPU Type</span>
+                            <span class="setting-label">Processor Type</span>
                             <span class="setting-value">Intel Core i7-12700K</span>
                         </div>
                         <div class="setting-item editable" data-setting="cpuSpeed" data-type="select" data-options='["3.20GHz","3.40GHz","3.60GHz","3.80GHz","4.00GHz"]'>
-                            <span class="setting-label">CPU Speed</span>
+                            <span class="setting-label">Base Clock Speed</span>
                             <span class="setting-value">3.60GHz</span>
                         </div>
                         <div class="setting-item editable" data-setting="turboBoost" data-type="select" data-options='["Enabled","Disabled"]'>
-                            <span class="setting-label">Intel Turbo Boost</span>
+                            <span class="setting-label">Intel Turbo Boost Technology</span>
                             <span class="setting-value">Enabled</span>
-                            <div class="setting-desc">Automatically increase CPU frequency</div>
+                            <div class="setting-desc">Automatically increase CPU frequency under load</div>
                         </div>
                         <div class="setting-item editable" data-setting="virtualization" data-type="select" data-options='["Enabled","Disabled"]'>
-                            <span class="setting-label">Virtualization (VT-x)</span>
+                            <span class="setting-label">Virtualization Technology (VT-x)</span>
                             <span class="setting-value">Enabled</span>
                         </div>
                         <div class="setting-item editable" data-setting="hyperThreading" data-type="select" data-options='["Enabled","Disabled"]'>
-                            <span class="setting-label">Hyper-Threading</span>
+                            <span class="setting-label">Hyper-Threading Technology</span>
                             <span class="setting-value">Enabled</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">CPU Core Count</span>
+                            <span class="setting-value">12 Cores / 20 Threads</span>
                         </div>
                     </div>
 
                     <div class="setting-group">
-                        <div class="group-title">Chipset Configuration</div>
+                        <div class="group-title">Chipset & Peripheral Configuration</div>
                         <div class="setting-item editable" data-setting="pcieSpeed" data-type="select" data-options='["Auto","Gen3 x16","Gen4 x16","Gen5 x16"]'>
-                            <span class="setting-label">PCIe Speed</span>
+                            <span class="setting-label">PCI Express Speed</span>
                             <span class="setting-value">Gen4 x16</span>
                         </div>
                         <div class="setting-item editable" data-setting="usbConfig" data-type="select" data-options='["Enabled","Disabled","Legacy Only"]'>
-                            <span class="setting-label">USB Configuration</span>
+                            <span class="setting-label">USB Controller Configuration</span>
                             <span class="setting-value">Enabled</span>
                         </div>
                         <div class="setting-item editable" data-setting="xmpProfile" data-type="select" data-options='["Disabled","Profile 1","Profile 2","Profile 3"]'>
-                            <span class="setting-label">XMP Profile</span>
+                            <span class="setting-label">XMP Memory Profile</span>
                             <span class="setting-value">Profile 1</span>
-                            <div class="setting-desc">Memory overclocking profile</div>
+                            <div class="setting-desc">Extreme Memory Profile for overclocking</div>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Thunderbolt Support</span>
+                            <span class="setting-value">Available</span>
                         </div>
                     </div>
 
                     <div class="setting-group">
-                        <div class="group-title">Power Management</div>
+                        <div class="group-title">Power Management Settings</div>
                         <div class="setting-item editable" data-setting="acpiState" data-type="select" data-options='["S1 (POS)","S3 (Suspend to RAM)","S5 (Soft Off)"]'>
-                            <span class="setting-label">ACPI State</span>
+                            <span class="setting-label">ACPI Suspend State</span>
                             <span class="setting-value">S3 (Suspend to RAM)</span>
                         </div>
                         <div class="setting-item editable" data-setting="erpReady" data-type="select" data-options='["Enabled","Disabled"]'>
-                            <span class="setting-label">ErP Ready</span>
+                            <span class="setting-label">ErP Ready Mode</span>
                             <span class="setting-value">Disabled</span>
                         </div>
                         <div class="setting-item editable" data-setting="powerRestore" data-type="select" data-options='["Power Off","Power On","Last State"]'>
-                            <span class="setting-label">Restore on AC Power Loss</span>
+                            <span class="setting-label">Restore AC Power Loss</span>
                             <span class="setting-value">Power Off</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Fan Speed Control</span>
+                            <span class="setting-value">Automatic</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Sección Security -->
                 <div class="section" id="security">
-                    <div class="section-title">SECURITY</div>
+                    <div class="section-title">SECURITY & ACCESS CONTROL</div>
                     
                     <div class="setting-group">
-                        <div class="group-title">Password Settings</div>
+                        <div class="group-title">Password Protection</div>
                         <div class="setting-item editable" data-setting="adminPassword" data-type="password">
                             <span class="setting-label">Administrator Password</span>
                             <span class="setting-value">Not Set</span>
-                            <div class="setting-desc">Press Enter to set or change password</div>
+                            <div class="setting-desc">Press Enter to set or change administrator password</div>
                         </div>
                         <div class="setting-item editable" data-setting="userPassword" data-type="password">
                             <span class="setting-label">User Password</span>
                             <span class="setting-value">Not Set</span>
+                            <div class="setting-desc">Restrict BIOS access to authorized users</div>
                         </div>
                         <div class="setting-item editable" data-setting="passwordBoot" data-type="select" data-options='["Disabled","Enabled"]'>
                             <span class="setting-label">Password on Boot</span>
                             <span class="setting-value">Disabled</span>
                         </div>
+                        <div class="setting-item editable" data-setting="passwordSetup" data-type="select" data-options='["Disabled","Enabled"]'>
+                            <span class="setting-label">Password on Setup</span>
+                            <span class="setting-value">Disabled</span>
+                        </div>
                     </div>
 
                     <div class="setting-group">
-                        <div class="group-title">Secure Boot</div>
+                        <div class="group-title">Secure Boot Configuration</div>
                         <div class="setting-item editable" data-setting="secureBootMode" data-type="select" data-options='["Standard","Custom","Disabled"]'>
                             <span class="setting-label">Secure Boot Mode</span>
                             <span class="setting-value">Standard</span>
@@ -864,15 +1035,19 @@
                             <span class="setting-value">Enabled</span>
                         </div>
                         <div class="setting-item">
-                            <span class="setting-label">Platform Key (PK)</span>
+                            <span class="setting-label">Platform Key Status</span>
                             <span class="setting-value">Installed</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Secure Boot Database</span>
+                            <span class="setting-value">Valid</span>
                         </div>
                     </div>
 
                     <div class="setting-group">
-                        <div class="group-title">TPM Configuration</div>
+                        <div class="group-title">TPM & Hardware Security</div>
                         <div class="setting-item">
-                            <span class="setting-label">TPM Device</span>
+                            <span class="setting-label">TPM Device Status</span>
                             <span class="setting-value">Available</span>
                         </div>
                         <div class="setting-item editable" data-setting="tpmState" data-type="select" data-options='["Enabled","Disabled","Hidden"]'>
@@ -880,31 +1055,39 @@
                             <span class="setting-value">Enabled</span>
                         </div>
                         <div class="setting-item editable" data-setting="clearTPM" data-type="select" data-options='["No","Yes"]'>
-                            <span class="setting-label">Clear TPM</span>
+                            <span class="setting-label">Clear TPM on Next Boot</span>
                             <span class="setting-value">No</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Hardware Encryption</span>
+                            <span class="setting-value">Supported</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Sección Boot -->
                 <div class="section" id="boot">
-                    <div class="section-title">BOOT</div>
+                    <div class="section-title">BOOT PRIORITY & CONFIGURATION</div>
                     
                     <div class="setting-group">
                         <div class="group-title">Boot Mode Selection</div>
                         <div class="setting-item editable" data-setting="bootMode" data-type="select" data-options='["UEFI","Legacy","Legacy + UEFI"]'>
-                            <span class="setting-label">Boot Mode</span>
+                            <span class="setting-label">Boot Mode Selection</span>
                             <span class="setting-value">UEFI</span>
-                            <div class="setting-desc">Legacy/UEFI boot mode</div>
+                            <div class="setting-desc">Select UEFI for modern OS, Legacy for compatibility</div>
                         </div>
                         <div class="setting-item editable" data-setting="csmSupport" data-type="select" data-options='["Enabled","Disabled"]'>
-                            <span class="setting-label">CSM Support</span>
+                            <span class="setting-label">CSM (Compatibility Support Module)</span>
                             <span class="setting-value">Disabled</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Boot Option Filter</span>
+                            <span class="setting-value">UEFI and Legacy</span>
                         </div>
                     </div>
 
                     <div class="setting-group">
-                        <div class="group-title">Boot Option Priorities</div>
+                        <div class="group-title">Boot Priority Order</div>
                         <div class="boot-list" id="bootList">
                             <div class="boot-item" draggable="true" data-order="0">
                                 <span class="boot-order-num">1.</span>
@@ -935,70 +1118,125 @@
                     </div>
 
                     <div class="setting-group">
-                        <div class="group-title">Boot Settings</div>
+                        <div class="group-title">Boot Behavior Settings</div>
                         <div class="setting-item editable" data-setting="fastBoot" data-type="select" data-options='["Enabled","Disabled"]'>
                             <span class="setting-label">Fast Boot</span>
                             <span class="setting-value">Enabled</span>
                         </div>
                         <div class="setting-item editable" data-setting="bootDelay" data-type="select" data-options='["0 sec","1 sec","2 sec","3 sec","5 sec"]'>
-                            <span class="setting-label">Boot Delay</span>
+                            <span class="setting-label">Boot Delay Time</span>
                             <span class="setting-value">3 sec</span>
                         </div>
                         <div class="setting-item editable" data-setting="bootLogo" data-type="select" data-options='["Enabled","Disabled"]'>
-                            <span class="setting-label">Boot Logo Display</span>
+                            <span class="setting-label">Display Boot Logo</span>
                             <span class="setting-value">Enabled</span>
+                        </div>
+                        <div class="setting-item">
+                            <span class="setting-label">Boot Menu Key</span>
+                            <span class="setting-value">F12</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Sección Exit -->
                 <div class="section" id="exit">
-                    <div class="section-title">EXIT</div>
+                    <div class="section-title">EXIT & SAVE OPTIONS</div>
                     
                     <div class="setting-group">
-                        <div class="group-title">Exit Options</div>
+                        <div class="group-title">Exit Configuration Options</div>
                         <div class="setting-item selected" id="exitSave">
                             <span class="setting-label">Exit Saving Changes</span>
                             <span class="setting-value">→</span>
-                            <div class="setting-desc">Save configuration changes and exit</div>
+                            <div class="setting-desc">Save all configuration changes and exit BIOS setup</div>
                         </div>
                         <div class="setting-item" id="exitDiscard">
                             <span class="setting-label">Exit Discarding Changes</span>
                             <span class="setting-value">→</span>
-                            <div class="setting-desc">Discard changes and exit</div>
+                            <div class="setting-desc">Discard all changes and exit BIOS setup</div>
                         </div>
                         <div class="setting-item" id="saveWithoutExit">
                             <span class="setting-label">Save Changes Without Exiting</span>
                             <span class="setting-value">→</span>
+                            <div class="setting-desc">Save configuration but remain in BIOS setup</div>
                         </div>
                         <div class="setting-item" id="loadOptimized">
                             <span class="setting-label">Load Optimized Defaults</span>
                             <span class="setting-value">→</span>
-                            <div class="setting-desc">Load factory default settings</div>
+                            <div class="setting-desc">Load factory optimized default settings</div>
                         </div>
                         <div class="setting-item" id="loadFailSafe">
                             <span class="setting-label">Load Fail-Safe Defaults</span>
                             <span class="setting-value">→</span>
-                            <div class="setting-desc">Load minimal safe settings</div>
+                            <div class="setting-desc">Load minimal fail-safe default settings</div>
+                        </div>
+                        <div class="setting-item" id="discardChanges">
+                            <span class="setting-label">Discard Changes</span>
+                            <span class="setting-value">→</span>
+                            <div class="setting-desc">Discard all unsaved changes</div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Status Bar -->
-                <div class="status-bar">
-                    <span class="status-changes" id="changesCount">No changes</span>
-                    <span class="status-info">Press F10 to Save & Exit • ESC to Cancel</span>
+            <!-- Barra de estado inferior -->
+            <div class="status-bar">
+                <div class="status-left">
+                    <div class="status-item">
+                        <span class="status-label">Changes:</span>
+                        <span class="status-value" id="changesCount">None</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Section:</span>
+                        <span class="status-value" id="currentSection">Main</span>
+                    </div>
                 </div>
-
-                <!-- Ayuda de navegación -->
-                <div class="nav-hint">
-                    <div>↑↓ : <span>Select Item</span></div>
-                    <div>←→/<span>Enter</span> : Change Value</div>
-                    <div><span>ESC</span> : Exit/Cancel</div>
-                    <div><span>F10</span> : Save & Exit</div>
-                    <div><span>F5/F6</span> : Previous/Next Boot</div>
+                <div class="status-center">
+                    <span>Use arrow keys to navigate • Press Enter to modify settings</span>
+                </div>
+                <div class="status-right">
+                    <div class="key-hint">
+                        <span class="key">F10</span>
+                        <span class="key-desc">Save & Exit</span>
+                    </div>
+                    <div class="key-hint">
+                        <span class="key">ESC</span>
+                        <span class="key-desc">Cancel</span>
+                    </div>
+                    <div class="key-hint">
+                        <span class="key">F1</span>
+                        <span class="key-desc">Help</span>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Panel de ayuda lateral -->
+    <div class="help-panel">
+        <div class="help-title">NAVIGATION KEYS</div>
+        <div class="help-item">
+            <span class="help-key">↑ ↓</span>
+            <span class="help-desc">Select Item</span>
+        </div>
+        <div class="help-item">
+            <span class="help-key">← →</span>
+            <span class="help-desc">Change Value</span>
+        </div>
+        <div class="help-item">
+            <span class="help-key">Enter</span>
+            <span class="help-desc">Edit/Select</span>
+        </div>
+        <div class="help-item">
+            <span class="help-key">+ / -</span>
+            <span class="help-desc">Adjust Values</span>
+        </div>
+        <div class="help-item">
+            <span class="help-key">F5 / F6</span>
+            <span class="help-desc">Boot Order</span>
+        </div>
+        <div class="help-item">
+            <span class="help-key">DEL</span>
+            <span class="help-desc">Enter Setup</span>
         </div>
     </div>
 
@@ -1013,14 +1251,14 @@
                 <button class="password-toggle" id="togglePassword">Show</button>
             </div>
             <div class="modal-buttons">
-                <button class="modal-btn save" id="modalSave">Save</button>
-                <button class="modal-btn cancel" id="modalCancel">Cancel</button>
+                <button class="modal-btn save" id="modalSave">✓ Save</button>
+                <button class="modal-btn cancel" id="modalCancel">✗ Cancel</button>
             </div>
         </div>
     </div>
 
     <!-- Indicador de guardado -->
-    <div class="save-indicator" id="saveIndicator">✓ Configuration Saved!</div>
+    <div class="save-indicator" id="saveIndicator">Configuration Saved Successfully!</div>
 
     <script>
         // Configuración actual
@@ -1041,6 +1279,7 @@
             adminPassword: '',
             userPassword: '',
             passwordBoot: 'Disabled',
+            passwordSetup: 'Disabled',
             secureBootMode: 'Standard',
             secureBootState: 'Enabled',
             tpmState: 'Enabled',
@@ -1103,6 +1342,8 @@
                     document.getElementById(targetSection).classList.add('active');
                     
                     currentSection = targetSection;
+                    document.getElementById('currentSection').textContent = 
+                        targetSection.charAt(0).toUpperCase() + targetSection.slice(1);
                     selectedItemIndex = 0;
                     updateSelectedItem();
                     playBeep();
@@ -1199,6 +1440,14 @@
                         playBeep();
                     }
                     break;
+                    
+                case 'F1':
+                    e.preventDefault();
+                    // Toggle help panel
+                    const helpPanel = document.querySelector('.help-panel');
+                    helpPanel.style.display = helpPanel.style.display === 'none' ? 'block' : 'none';
+                    playBeep();
+                    break;
             }
         }
 
@@ -1216,7 +1465,7 @@
                 const itemRect = item.getBoundingClientRect();
                 const containerRect = container.getBoundingClientRect();
                 
-                if (itemRect.top < containerRect.top + 50 || itemRect.bottom > containerRect.bottom - 50) {
+                if (itemRect.top < containerRect.top + 60 || itemRect.bottom > containerRect.bottom - 60) {
                     item.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }
@@ -1261,7 +1510,7 @@
                 modalPassword.style.display = 'block';
                 toggleBtn.style.display = 'block';
                 modalPassword.value = '';
-                modalPassword.setAttribute('placeholder', currentValue === 'Not Set' ? 'Enter new password' : 'Enter current password');
+                modalPassword.setAttribute('placeholder', currentValue === 'Not Set' || currentValue === '******' ? 'Enter new password' : 'Enter current password');
             }
             
             modal.classList.add('active');
@@ -1299,7 +1548,7 @@
             updateChangesCount();
             saveConfig();
             closeModal();
-            showSaveIndicator();
+            showSaveIndicator('Configuration updated successfully!', 'success');
         }
 
         function closeModal() {
@@ -1376,7 +1625,7 @@
                 hasChanges = true;
                 updateChangesCount();
                 saveConfig();
-                showSaveIndicator();
+                showSaveIndicator('Boot order updated!', 'success');
             }
         }
 
@@ -1396,7 +1645,7 @@
             hasChanges = true;
             updateChangesCount();
             saveConfig();
-            showSaveIndicator();
+            showSaveIndicator('Boot order updated!', 'success');
         }
 
         function moveBootItemDown() {
@@ -1415,7 +1664,7 @@
             hasChanges = true;
             updateChangesCount();
             saveConfig();
-            showSaveIndicator();
+            showSaveIndicator('Boot order updated!', 'success');
         }
 
         function resetBootOrder() {
@@ -1429,7 +1678,7 @@
             hasChanges = true;
             updateChangesCount();
             saveConfig();
-            showSaveIndicator();
+            showSaveIndicator('Boot order reset to default!', 'success');
         }
 
         function renderBootOrder() {
@@ -1485,20 +1734,23 @@
         function updateChangesCount() {
             const countElement = document.getElementById('changesCount');
             if (hasChanges) {
-                countElement.textContent = 'Changes pending...';
+                countElement.textContent = 'Unsaved';
                 countElement.style.color = '#ff0';
             } else {
-                countElement.textContent = 'No changes';
+                countElement.textContent = 'None';
                 countElement.style.color = '#0c0';
             }
         }
 
-        function showSaveIndicator() {
+        function showSaveIndicator(message, type = 'success') {
             const indicator = document.getElementById('saveIndicator');
+            indicator.textContent = message;
+            indicator.className = 'save-indicator';
+            indicator.classList.add(type);
             indicator.classList.add('show');
             setTimeout(() => {
                 indicator.classList.remove('show');
-            }, 3000);
+            }, 3500);
         }
 
         function playBeep() {
@@ -1523,6 +1775,7 @@
                     saveConfig();
                     message = 'Saving configuration...\nSystem will reboot.';
                     shouldReset = true;
+                    showSaveIndicator('Configuration saved! Rebooting...', 'success');
                     break;
                 case 'exitDiscard':
                     // Recargar configuración original
@@ -1532,12 +1785,14 @@
                     updateChangesCount();
                     message = 'Discarding changes...\nSystem will reboot.';
                     shouldReset = true;
+                    showSaveIndicator('Changes discarded. Rebooting...', 'success');
                     break;
                 case 'saveWithoutExit':
                     saveConfig();
                     hasChanges = false;
                     updateChangesCount();
                     message = 'Configuration saved successfully.';
+                    showSaveIndicator('Configuration saved successfully!', 'success');
                     break;
                 case 'loadOptimized':
                     // Cargar defaults optimizados
@@ -1558,6 +1813,7 @@
                         adminPassword: biosConfig.adminPassword,
                         userPassword: biosConfig.userPassword,
                         passwordBoot: 'Disabled',
+                        passwordSetup: 'Disabled',
                         secureBootMode: 'Standard',
                         secureBootState: 'Enabled',
                         tpmState: 'Enabled',
@@ -1573,6 +1829,7 @@
                     hasChanges = true;
                     updateChangesCount();
                     message = 'Loading optimized defaults...\nPlease save to apply.';
+                    showSaveIndicator('Optimized defaults loaded!', 'success');
                     break;
                 case 'loadFailSafe':
                     // Cargar defaults seguros
@@ -1593,6 +1850,7 @@
                         adminPassword: biosConfig.adminPassword,
                         userPassword: biosConfig.userPassword,
                         passwordBoot: 'Disabled',
+                        passwordSetup: 'Disabled',
                         secureBootMode: 'Disabled',
                         secureBootState: 'Disabled',
                         tpmState: 'Disabled',
@@ -1613,10 +1871,21 @@
                     hasChanges = true;
                     updateChangesCount();
                     message = 'Loading fail-safe defaults...\nSystem stability prioritized.';
+                    showSaveIndicator('Fail-safe defaults loaded!', 'success');
+                    break;
+                case 'discardChanges':
+                    biosConfig = JSON.parse(localStorage.getItem('biosConfig')) || biosConfig;
+                    loadSavedConfig();
+                    hasChanges = false;
+                    updateChangesCount();
+                    message = 'All unsaved changes have been discarded.';
+                    showSaveIndicator('Changes discarded!', 'success');
                     break;
             }
             
-            alert(message);
+            if (option !== 'saveWithoutExit' && option !== 'discardChanges') {
+                alert(message);
+            }
             
             if (shouldReset) {
                 // Simular reinicio
@@ -1629,6 +1898,9 @@
                 setTimeout(() => {
                     document.getElementById('postScreen').style.display = 'none';
                     document.getElementById('postScreen').style.animation = '';
+                    // Recargar configuración
+                    biosConfig = JSON.parse(localStorage.getItem('biosConfig')) || biosConfig;
+                    loadSavedConfig();
                 }, 4000);
             }
         }
